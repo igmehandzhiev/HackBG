@@ -1,0 +1,11 @@
+string caesar_encrypt(string str, int n)
+{
+    string En_string="";
+    for(int i=0;i<str.length();++i)
+  {
+      if ((static_cast<int>(str[i])>64)&&(static_cast<int>(str[i])<91)&&((static_cast<int>(str[i])+n)>90)) En_string+=64+(static_cast<int>(str[i])+n-90);
+      else if ((static_cast<int>(str[i])>96)&&(static_cast<int>(str[i])<123)&&((static_cast<int>(str[i])+n)>122)) En_string+=96+(static_cast<int>(str[i])+n-122);
+      else  En_string+=static_cast<int>(str[i])+n;
+  }
+  return En_string;
+}

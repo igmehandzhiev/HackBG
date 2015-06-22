@@ -1,0 +1,5 @@
+float  fill_tetrahedron(int num){
+    float Vol_cm3=(sqrt(2)*pow(num,3)/12);
+    float Vol_dm3=Vol_cm3/1000;
+    return Vol_dm3;
+}

@@ -1,0 +1,16 @@
+int tetrahedron_filled(int *tetrahedrons, int water)
+{
+    int filled=0;
+    float Sum=0;
+    float Vol;
+    for (int i=0;tetrahedrons[i]>0 ;++i)
+    {
+        Vol=(((sqrt(2)*pow(tetrahedrons[i],3))/12)/1000);
+        Sum+=Vol;
+        if (water>Sum) {
+                filled++;
+        }
+        else (Sum=Sum-Vol);
+    }
+    return filled;
+}
