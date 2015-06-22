@@ -7,14 +7,12 @@ public class Fridge {
 	double weight = 0;
 	double foodWeight = 0;
 
+	Fridge() {}
 	Fridge(int capacity, double weight) {
 		this.capacity = capacity;
 		this.weight = weight;
 	}
 
-	public Fridge(int i) {
-		this.capacity = i;
-	}
 
 	void addFood(Food f) {
 		double weight=foodWeight;
