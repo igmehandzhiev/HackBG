@@ -15,7 +15,16 @@ public class StringNormalizer {
 				res.add(str);
 			}
 		}
-		return String.join(" ", res);
+		return join(" ", res);
+	}
+
+	public static String join(String glue, Vector<String> a) {
+		String string4e = new String();
+		for (int i = 0; i < a.size(); ++i) {
+			string4e += a.get(i) + glue;
+		}
+		string4e = string4e.substring(0, string4e.length() - 1);
+		return string4e;
 	}
 
 	public static void main(String[] args) {

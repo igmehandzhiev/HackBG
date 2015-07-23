@@ -1,5 +1,6 @@
 package com.hackbulgaria.programming51.week4;
 
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -9,6 +10,16 @@ public class MissingStudents {
 			Vector<String> students, Vector<Vector<String>> presence) {
 		Vector<Vector<String>> missing = new Vector<>();
 		
+		for (Vector<String> pres : presence) {
+			Vector<String> mis = new Vector<>();
+			for (String str : students) {
+				if (!pres.contains(str))
+					mis.add(str);
+			}
+			missing.add(mis);
+			Collections.sort(mis);
+		}
+		 
 		return missing;
 	}
 
