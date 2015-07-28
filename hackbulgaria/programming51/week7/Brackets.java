@@ -1,16 +1,22 @@
 package com.hackbulgaria.programming51.week7;
-
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Brackets {
 	public static boolean areCorrect(String brackets) {
-		Queue<Character> ch = new LinkedList<>();
-		for (int i = 0; i < brackets.length(); ++i) { // String to Opashka
-			ch.add(brackets.charAt(i));
+		int result=0;
+		char[] ch=brackets.toCharArray();
+		for(int i=0;i<brackets.length();++i){
+			for(int j=brackets.length()-1;j>i;--j){
+				char iC=ch[i];
+				char jC=ch[j];
+				if(iC=='('&&jC==')')result=j-i-1;
+				if(iC=='['&&jC==']')result=j-i-1;
+				if(iC=='{'&&jC=='}')result=j-i-1;
+				if (result%2!=0)return false;
+			}
 		}
-		Character temp = ch.peek();
+		return true;
+		
 	}
 
 	public static void main(String[] args) {
