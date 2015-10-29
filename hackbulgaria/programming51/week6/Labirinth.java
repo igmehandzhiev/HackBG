@@ -24,7 +24,7 @@ public class Labirinth {
 		
 	}
 
-	public boolean movePerson(Movement move) {
+	public void movePerson(Movement move) {
 		
 	}
 
